@@ -1,29 +1,40 @@
+import './style.css'
+
 const Cards = ({registeredUsers}) => {
     return (
             registeredUsers.length > 0 ? (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Email</th>
-                            <th>Gênero</th>
-                        </tr>
-                    </thead>
-                {registeredUsers.map(({name, surname, gender, email}, index) => {
+                <div className='users__container'>
+                {registeredUsers.map(({name, surname, gender, email, password, acceptTerms}, index) => {
                     return (
-                        <tbody key={index}>
-                            <tr>
-                                <td>{name}</td>
-                                <td>{surname}</td>
-                                <td>{email}</td>
-                                <td>{gender}</td>
-                            </tr>
-                        </tbody>
+                    <div key={index} className='user_card'>
+                        <div className='info_wrapper'>
+                            <p><strong>Nome: </strong>{name}</p>
+                        </div>
+                        <div className='info_wrapper'>
+                            <p><strong>Sobrenome: </strong>{surname}</p>
+                        </div>
+                        <div className='info_wrapper'>
+                            <p><strong>Gênero: </strong>{gender}</p>
+                        </div>
+                        <div className='info_wrapper'>
+                            <p><strong>Email: </strong>{email}</p>
+                        </div>
+                        <div className='info_wrapper'>
+                            <p><strong>Senha: </strong>{password}</p>
+                        </div>
+                        <div className='info_wrapper'>
+                            <p><strong>Termos e condições: </strong>{acceptTerms}</p>
+                        </div>
+                    </div>
                     )  
                 })}
-                </table>
-            ) : <h4>Não há cadastros a serem exibidos</h4>
+                </div>
+                
+            ) : (
+                <div className='no-content'>
+                    <h4>Ops! Não há usuários cadastrados</h4>
+                </div>
+            )
     )
 }
 

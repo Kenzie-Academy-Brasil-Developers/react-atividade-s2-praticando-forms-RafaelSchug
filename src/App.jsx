@@ -7,7 +7,6 @@ import Cards from './Pages/Cards'
 function App() {
 
   const history = useHistory();
-
   const [registeredUsers, setRegisteredUsers] = useState([]);
 
   const handleSwitch = event => {
@@ -18,20 +17,20 @@ function App() {
   return (
     <div className='main__container'>
       <div className='switch__container'>
-        <button onClick={handleSwitch} data-goto='/'>Cadastrar Novo Usuário</button>
-        <button onClick={handleSwitch} data-goto='/users'>Exibir Cadastros</button>
+        <div className='button__container'>
+          <button onClick={handleSwitch} data-goto='/'>Novo Usuário</button>
+          <button onClick={handleSwitch} data-goto='/users'>Exibir Usuários</button></div> 
         <Switch>
-            <Route exact path='/'>
-              <Form registeredUsers={registeredUsers} setRegisteredUsers={setRegisteredUsers}></Form>
-            </Route>
-            <Route path='/users/'>
-              <Cards registeredUsers={registeredUsers}></Cards>
-            </Route>
-          </Switch>
+          <Route exact path='/'>
+            <Form registeredUsers={registeredUsers} setRegisteredUsers={setRegisteredUsers}></Form>
+          </Route>
+          <Route path='/users/'>
+            <Cards registeredUsers={registeredUsers}></Cards>
+          </Route>
+        </Switch>
       </div>
     </div>
   )
-
   
 }
 

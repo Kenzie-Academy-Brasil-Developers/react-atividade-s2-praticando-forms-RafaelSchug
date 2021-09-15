@@ -1,19 +1,43 @@
 .main__container {
+  margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
+  max-width: 500px;
+  padding: 20px;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.form__container form {
-  width: 300px;
+
+.switch__container {
+  min-height: 400px;
+
+}
+
+.button__container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 5px;
+  margin-bottom: 10px;
 }
 
-.form__container form :nth-child(n) {
-  height: 30px;
+.button__container button {
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+  background: linear-gradient(0deg, #059d15, #56e54a);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0 4px;
+  
+}
+
+.button__container button:hover {
+  background: linear-gradient(0deg, #198a25, #3ad22e);
+}
+
+.button__container button:active {
+  background: linear-gradient(0deg, #087b14, #15ce06);
 }

@@ -1,0 +1,62 @@
+.form__container {
+    padding: 15px;
+    background: white;
+}
+
+.form__container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 5px;
+    color: #c12504;
+}
+
+.form__container input, select {
+    padding: 4px;
+    border: 1px solid #c1c1c1;
+    border-radius: 2px;
+    height: 40px;
+    font-size: 0.9rem;
+
+}
+
+.form__container select {
+    background: white;
+    line-height: 40px;
+}
+
+.form__container option {
+    display: block;
+    height: 40px;
+    padding: 20px;
+}
+  
+#terms_content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#terms_content input {
+    height: unset;
+    color: black;
+}
+
+#terms_content label {
+    color: black
+}
+
+.form__container button {
+    margin-top: 20px;
+    height: 40px;
+    background: #013ca7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form__container button:hover {
+    background: #002c7e;
+
+}

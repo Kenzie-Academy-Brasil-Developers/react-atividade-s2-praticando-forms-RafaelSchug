@@ -1,0 +1,38 @@
+.users__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.user_card {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.user_card p {
+    word-break: break-all;
+}
+
+.info_wrapper {
+    border: 1px dashed #ababab;
+    border-radius: 2px;
+    line-height: 30px;
+    padding: 0 4px;
+}
+
+.no-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: white;
+}
+
