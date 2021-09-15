@@ -1,0 +1,19 @@
+.main__container {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__container form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form__container form :nth-child(n) {
+  height: 30px;
+}
