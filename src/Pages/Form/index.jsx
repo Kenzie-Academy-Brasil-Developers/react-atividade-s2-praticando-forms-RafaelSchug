@@ -10,7 +10,7 @@ const Form = ({registeredUsers ,setRegisteredUsers}) => {
     const formSchema = yup.object().shape({
         name: yup.string().required('Nome é um campo obrigatório').test('length', 'Precisa conter no mínimo 4 caracteres', str => str.length >= 4),
         surname: yup.string().required("Sobrenome é um campo obrigatório"),
-        email: yup.string().required("Email é um campo obrigatório"),
+        email: yup.string().email("Email inválido").required("Email é um campo obrigatório"),
         password: yup.string().required("Senha é um campo obrigatório").test('length', 'Mínimo de 8 caracteres', str => str.length >= 8),
         passwordcheck : yup.string().required("Senha é um campo obrigatório").test('length', 'Mínimo de 8 caracteres', str => str.length >= 8).oneOf([yup.ref('password'), ], 'Senhas não coincidem'),
         gender: yup.string().required(),
@@ -41,15 +41,15 @@ const Form = ({registeredUsers ,setRegisteredUsers}) => {
         
         <div className='form__container'>
             <form action="" onSubmit={handleSubmit(handleOnSubmit)}>
-                <input type="text" placeholder='Nome' {...register('name')} onChange={e=> setInputField({...inputField, name: e.target.value})} value={inputField.name}/>
+                <input  placeholder='Nome' {...register('name')} onChange={e=> setInputField({...inputField, name: e.target.value})} value={inputField.name}/>
                 {errors.name?.message}
-                <input type="text" placeholder='Sobrenome' {...register('surname')} onChange={e=> setInputField({...inputField, surname: e.target.value})} value={inputField.surname}/>
+                <input  placeholder='Sobrenome' {...register('surname')} onChange={e=> setInputField({...inputField, surname: e.target.value})} value={inputField.surname}/>
                 {errors.surname?.message}
-                <input type='email' placeholder='Seu_email@email.com' autoComplete='on' {...register('email')} onChange={e=> setInputField({...inputField, email: e.target.value})} value={inputField.email}/>
+                <input  placeholder='Seu_email@email.com' autoComplete='on' {...register('email')} onChange={e=> setInputField({...inputField, email: e.target.value})} value={inputField.email}/>
                 {errors.email?.message}
-                <input type='password' placeholder='Senha' autoComplete='new-password' {...register('password')} onChange={e=> setInputField({...inputField, password: e.target.value})} value={inputField.password} />
+                <input  type='password' placeholder='Senha' autoComplete='new-password' {...register('password')} onChange={e=> setInputField({...inputField, password: e.target.value})} value={inputField.password} />
                 {errors.password?.message}
-                <input type='password' placeholder='Confirmar Senha' autoComplete='new-password' {...register('passwordcheck')} onChange={e=> setInputField({...inputField, passwordCheck: e.target.value})} value={inputField.passwordCheck}/>
+                <input  type='password' placeholder='Confirmar Senha' autoComplete='new-password' {...register('passwordcheck')} onChange={e=> setInputField({...inputField, passwordCheck: e.target.value})} value={inputField.passwordCheck}/>
                 {errors.passwordcheck?.message}
                 <select name="" id="" {...register('gender')} onChange={e=> setInputField({...inputField, gender: e.target.value})} value={inputField.gender}>
                     <option value="Masculino">Masculino</option>
